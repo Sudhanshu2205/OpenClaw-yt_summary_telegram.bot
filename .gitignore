@@ -1,25 +1,24 @@
+@'
 # Python
 __pycache__/
 *.py[cod]
 *.pyo
-*.pyd
-
-# Virtual envs
-venv/
-.venv/
-
-# Environment secrets
 .env
+.venv
+venv/
+.env.*
+.Python
+build/
+dist/
+*.egg-info/
 
-# OS / editor
-.DS_Store
-Thumbs.db
+# VSCode / OS
 .vscode/
+Thumbs.db
+desktop.ini
+*.swp
+'@ | Set-Content -Encoding UTF8 .gitignore
 
-# Tooling caches
-.npm-cache/
+'## Project Title
 
-# Runtime data/logs
-data/*.db
-data/*.log
-
+Short description of the project.' | Set-Content -Encoding UTF8 README.md
