@@ -441,3 +441,14 @@ README image blocks:
 
 ![Summary Flow](screenshots/summary.png)
 ![Q&A Flow](screenshots/qa.png)
+
+## Demo Video
+
+Place your recorded video in:
+- `assets/videos/`
+
+Suggested filename:
+- `assets/videos/demo.mp4`
+
+If file size is too large for GitHub, upload video externally (Google Drive/YouTube) and add the link here:
+- Demo link: `<https://drive.google.com/drive/folders/1CnNoSFZgCptxyFv1eyFn7E9AcHzw2djE?usp=drive_link>`
