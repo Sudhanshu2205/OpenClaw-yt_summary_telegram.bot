@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual envs
+venv/
+.venv/
+
+# Environment secrets
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Tooling caches
+.npm-cache/
+
+# Runtime data/logs
+data/*.db
+data/*.log
+

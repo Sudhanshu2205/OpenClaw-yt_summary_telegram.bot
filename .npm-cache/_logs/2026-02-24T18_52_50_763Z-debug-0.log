@@ -1,0 +1,19 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.16.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\avish\Yt-Telegram_bot\.npmrc
+5 silly config load:file:C:\Users\avish\.npmrc
+6 silly config load:file:C:\Users\avish\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm view openclaw version
+8 verbose argv "--cache" ".npm-cache" "--offline" "false" "view" "openclaw" "version"
+9 verbose logfile logs-max:10 dir:C:\Users\avish\Yt-Telegram_bot\.npm-cache\_logs\2026-02-24T18_52_50_763Z-
+10 verbose logfile C:\Users\avish\Yt-Telegram_bot\.npm-cache\_logs\2026-02-24T18_52_50_763Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/openclaw 447ms (cache miss)
+13 verbose cwd C:\Users\avish\Yt-Telegram_bot
+14 verbose os Windows_NT 10.0.26200
+15 verbose node v22.16.0
+16 verbose npm  v10.9.2
+17 verbose exit 0
+18 info ok
