@@ -89,7 +89,7 @@ Business-focused assistant for YouTube:
 
 - Transcript retrieval source:
   - Primary: `youtube-transcript-api`
-  - Fallback: `yt-dlp` + speech-to-text when captions are unavailable
+  - Fallback: `yt-dlp` based fallback transcription path when captions are unavailable
 - Per-message transcript payload kept in session state:
   - `transcript` (plain text)
   - `transcript_lines` (line-by-line with `[mm:ss]` timestamps)
@@ -147,6 +147,21 @@ Business-focused assistant for YouTube:
   - `Important Timestamps`
   - `Core Takeaway`
 
+## Design Trade-offs
+
+- Retrieval quality vs operational simplicity:
+  - Current system uses lexical overlap retrieval on timestamped transcript lines.
+  - This avoids vector DB setup complexity but may miss semantically similar wording.
+- Cost vs depth:
+  - Transcript is capped and chunk-compressed for token efficiency.
+  - This improves reliability/cost but can reduce very fine-grained detail for extremely long videos.
+- Strict grounding vs answer recall:
+  - Hard fallback and citation checks reduce hallucinations.
+  - Some borderline questions may return fallback instead of speculative answers.
+- Session robustness vs portability:
+  - SQLite with WAL gives safe concurrent access and clean session management.
+  - Adds local DB dependency compared to plain JSON file.
+
 ## Environment
 
 Create `.env`:
@@ -170,11 +185,8 @@ OPENROUTER_APP_NAME=yt-telegram-bot
 Optional:
 
 ```env
-AUDIO_ENABLED=true
-VOICE_INPUT_ENABLED=true
-VOICE_OUTPUT_ENABLED=true
-STT_MODEL=whisper-1
-TTS_MODEL=gpt-4o-mini-tts
+OPENROUTER_SITE_URL=https://your-site.example
+OPENROUTER_APP_NAME=yt-telegram-bot
 ```
 
 ## Install
@@ -418,3 +430,14 @@ Q&A fallback when answer not in transcript:
 - Very long video / transcript: handled (transcript capping + summarization chunking)
 - Rate limiting / quota constraints: handled with graceful user-facing errors
 - Network/provider errors: handled with graceful user-facing errors
+
+## Example Screenshots
+
+Add your screenshots to `screenshots/` with these names:
+- `screenshots/summary.png`
+- `screenshots/qa.png`
+
+README image blocks:
+
+![Summary Flow](screenshots/summary.png)
+![Q&A Flow](screenshots/qa.png)
